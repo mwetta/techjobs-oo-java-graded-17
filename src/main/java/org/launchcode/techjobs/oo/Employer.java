@@ -1,3 +1,6 @@
+// TASK 1
+// TODO: Review Employer class
+
 package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
