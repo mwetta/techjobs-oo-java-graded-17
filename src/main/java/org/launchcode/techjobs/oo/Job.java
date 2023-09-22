@@ -29,12 +29,13 @@ public class Job {
     }
     // TASK 3
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return getId() == job.getId();
     }
 
     @Override
