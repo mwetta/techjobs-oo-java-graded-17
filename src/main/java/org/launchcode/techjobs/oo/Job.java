@@ -7,7 +7,7 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private String name = "Data not available";
     private Employer employer;
     private Location location;
     private PositionType positionType;
@@ -86,6 +86,15 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    //TASK 5
+    //TODO: Code toString to Pass the first Test
+    @Override
+    public String toString() {
+        return "\nID: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer() + "\nLocation: " + this.getLocation() + "\nPosition Type: " + this.getPositionType() + "\nCore Competency: " + this.getCoreCompetency() + "\n";
+    }
+    //TODO: Modify to pass second test
+    //TODO: Modify to pass third test
 }
 
 // TASK 4 tests are in org.launchcode.techjobs.oo

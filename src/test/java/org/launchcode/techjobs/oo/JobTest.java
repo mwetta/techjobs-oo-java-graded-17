@@ -32,11 +32,23 @@ public class JobTest {
         Job secondJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(firstJob.equals(secondJob));
     }
-
-
-
     //Task 5
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertTrue(testJob.toString().endsWith("\n"));
+        assertTrue(testJob.toString().startsWith("\n"));
+    }
 
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job thirdJob = new Job("Software designer", new Employer("Thalys"), new Location("Overland Park, KS"), new PositionType("Software"), new CoreCompetency("Python"));
+        assertTrue(thirdJob.toString().endsWith("\nName: Software designer\nEmployer: Thalys\nLocation: Overland Park, KS\nPosition Type: Software\nCore Competency: Python\n"));
+    }
 
-
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job secondJob = new Job("Product tester", new Employer(), new Location(), new PositionType(), new CoreCompetency());
+        assertEquals("\nID: 3\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n", secondJob.toString());
+    }
 }
